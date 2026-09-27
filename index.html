@@ -5,17 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Job Application Tracker</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Job Application Tracker</h1>
   </header>
-  <section>Add New Application</section>
-  <form>
-    <label for="company Name">Company:</label>
-  </form>
+  <!-- Dashboard -->
+
+<section class="dashboard">
+
+    <div class="dashboard-card">
+        <h3>Total Applications</h3>
+        <p id="totalApplications">0</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Applied</h3>
+        <p id="appliedCount">0</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Interview</h3>
+        <p id="interviewCount">0</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Selected</h3>
+        <p id="selectedCount">0</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Rejected</h3>
+        <p id="rejectedCount">0</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Offer</h3>
+        <p id="offerCount">0</p>
+    </div>
 
 </section>
-  <script src="script.js" defer></script>
+<section>
+    <h2>Add New Application</h2>
+
+    <form id="applicationForm">
+
+        <div>
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" placeholder="Enter company name">
+        </div>
+
+        <div>
+            <label for="role">Job Role:</label>
+            <input type="text" id="role" name="role" placeholder="Enter job role">
+        </div>
+
+        <div>
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="">Select Status</option>
+                <option value="Applied">Applied</option>
+                <option value="Interview">Interview</option>
+                <option value="Selected">Selected</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Offer">Offer</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="applicationDate">Application Date:</label>
+            <input type="date" id="applicationDate" name="applicationDate">
+        </div>
+
+        <div>
+            <label for="followUpDate">Follow-up Date:</label>
+            <input type="date" id="followUpDate" name="followUpDate">
+        </div>
+
+        <button type="submit">Add Application</button>
+
+    </form>
+</section>
+<section>
+    <h2>Search & Filter</h2>
+
+    <div>
+        <label for="searchInput">Search Applications:</label>
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search by company or role"
+        >
+    </div>
+
+    <div>
+        <label for="statusFilter">Filter by Status:</label>
+
+        <select id="statusFilter">
+            <option value="All">All</option>
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Offer">Offer</option>
+        </select>
+    </div>
+</section>
+<section>
+    <h2>My Applications</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Application Date</th>
+                <th>Follow-up Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody id="applicationList">
+            <!-- Applications will be added here using JavaScript -->
+        </tbody>
+    </table>
+</section>
 </body>
 </html>
